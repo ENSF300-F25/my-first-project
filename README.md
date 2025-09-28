@@ -2,13 +2,14 @@
 
 def menu_option():
    
-     '''Prints menu options and prompts user to select an option to manipulate csv data accordingly
+     '''
+     Prints menu options and prompts user to select an option to manipulate csv data accordingly
     
     Returns:
         user_input (str): a valid input choosing a specific option
     '''
 
-     # Prints menu options
+      # Prints menu options
   print(f"\nChoose one of the following options: ")
   print(f"\t1. Finding the max (Highest Rank, Most Popular Genre, Highest Sale Numbers)")
   print(f"\t2. Finding the min (Lowest Rank, Least Popular Genre, Lowest Sale Numbers)")
@@ -27,7 +28,8 @@ def menu_option():
 
 def aquiring_data_to_useable_form(plateform,rank,sale,genre):
           
-      '''Pulls the correct information according to user selection of the platform
+      '''
+      Pulls the correct information according to user selection of the platform
     
     Parameters:
       plateform (str): a valid plateform
@@ -38,7 +40,7 @@ def aquiring_data_to_useable_form(plateform,rank,sale,genre):
     Returns:
         list: [all_ranks,na_sales,eu_sales,jp_sales,other_sales,global_sales, all_genre]
             list contains relevant information about the specific user platform
-  '''
+     '''
     
     # Establishing all needed lists to hold relevant information
   all_ranks = []
@@ -53,8 +55,8 @@ def aquiring_data_to_useable_form(plateform,rank,sale,genre):
   for i in range(len(rank)):
           # checking if the plateform is the same as the user choice
       if (rank[i][2] == plateform):
-          # adds ranking of game 
-          all_ranks += [int(rank[i][0])]
+        # adds ranking of game 
+        all_ranks += [int(rank[i][0])]
         # checking if the plateform is the same as the user choice
         if (sale[i][0] == plateform):
             # adds sale data
@@ -70,11 +72,12 @@ def aquiring_data_to_useable_form(plateform,rank,sale,genre):
             all_genre += [genre[i][2]]
     
     # returns all relevant information
-   return [all_ranks,na_sales,eu_sales,jp_sales,other_sales,global_sales, all_genre]
+  return [all_ranks,na_sales,eu_sales,jp_sales,other_sales,global_sales, all_genre]
 
 def get_max(data):
       
-      '''Uses all relevant information to find max rank, sale numbers and most popular genre
+      '''
+      Uses all relevant information to find max rank, sale numbers and most popular genre
     
      Parameters:
         data (lst): Contains all relevant information to calculate max
@@ -82,7 +85,7 @@ def get_max(data):
     
       Returns:
         list: [highest rank, Most sales (na),Most sales (eu) ,Most sales (jp), Most sales (other), Most sales (globally), how many times each genre appeared]
-'''
+      '''
 
       # declare all nessesary variables
 initial_genre_list = [0,0,0,0,0,0,0,0,0,0,0,0]
@@ -138,7 +141,8 @@ return [rank_array.max(), na_sales_array.min(),eu_sales_array.min(),jp_sales_arr
     
 def print_min_values(plateform,info,rank_list,sale_list,genre_list):
     
-    '''Find the rest of the nessesary information and extra details to print the information to the user in a nice format
+    '''
+    Find the rest of the nessesary information and extra details to print the information to the user in a nice format
     
      Parameters:
     plateform (str): a valid plateform
