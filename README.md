@@ -8,17 +8,17 @@ def menu_option():
         user_input (str): a valid input choosing a specific option
     '''
 
-  # Prints menu options
+     # Prints menu options
   print(f"\nChoose one of the following options: ")
   print(f"\t1. Finding the max (Highest Rank, Most Popular Genre, Highest Sale Numbers)")
   print(f"\t2. Finding the min (Lowest Rank, Least Popular Genre, Lowest Sale Numbers)")
   print(f"\t3. Finding the average (Average Ranking, Average Amount of Games in All Genres, Average Sale Numbers)")
   print(f"\t0. Return to main menu.")
 
-  # Prompts user for an input
+     # Prompts user for an input
   user_input = input(">> ")
 
-  # Checking for invalid inputs
+     # Checking for invalid inputs
   if (user_input != "0" and user_input != "1" and user_input != "2" and user_input != "3"):
       error_massage()         # Calls error message function
       return menu_option()    # Recalls this function until a correct valid input
@@ -65,12 +65,12 @@ def menu_option():
             global_sales += [float(sale[i][5])]
 
         # checking if the plateform is the same as the user choice
-        if (genre[i][0] == plateform):
+   if (genre[i][0] == plateform):
             # adds genre to list
             all_genre += [genre[i][2]]
     
     # returns all relevant information
-    return [all_ranks,na_sales,eu_sales,jp_sales,other_sales,global_sales, all_genre]
+   return [all_ranks,na_sales,eu_sales,jp_sales,other_sales,global_sales, all_genre]
 
 def get_max(data):
       
@@ -182,6 +182,6 @@ def print_min_values(plateform,info,rank_list,sale_list,genre_list):
     else:
         print(f"The lowest selling video game {gi.REGION_PRINT[k-1]} for the {plateform} is '{rank_list[num_which_info_is_found_at[k]][1]}' selling {info[k]}               million units.")
     
-    print(f"The least popular genre is {gi.ALL_GENRE[index_where_min_genre_is_at]} having {value_of_min_genre} games.")
-    print()
+   print(f"The least popular genre is {gi.ALL_GENRE[index_where_min_genre_is_at]} having {value_of_min_genre} games.")
+   print()
     
