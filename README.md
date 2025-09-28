@@ -25,7 +25,7 @@ def menu_option():
   else:
       return user_input       # Returns the user selection as a string
 
-  def aquiring_data_to_useable_form(plateform,rank,sale,genre):
+def aquiring_data_to_useable_form(plateform,rank,sale,genre):
           
       '''Pulls the correct information according to user selection of the platform
     
@@ -102,7 +102,7 @@ for j in data[6]:
       initial_genre_list[k] += 1
 
     
-  def get_min(data):
+def get_min(data):
     
     '''Uses all relevant information to find the lowest rank, the lowest sale numbers and least popular genre
     
